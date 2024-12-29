@@ -20,6 +20,9 @@ jobs:
 
             - name: Trigger Jenkins Pipeline
               run: |
+                echo $JENKINS_URL
+                echo $JENKINS_USER
+                echo $JENKINS_TOKEN
                 curl -X POST "$JENKINS_URL/job/JAVA_APP/build" \
                 --user "$JENKINS_USER:$JENKINS_TOKEN" \
                 --data-urlencode "token=$JENKINS_TOKEN"
